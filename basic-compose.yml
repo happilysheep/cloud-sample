@@ -1,0 +1,13 @@
+version :  '3'
+
+services :
+    eureka:
+      build:  ./sample-eureka
+      image:  sample/eureka
+      ports:
+          - "8070:8070"
+    config:
+      build:  ./sample-config
+      image:  sample/config
+      ports:
+          - "8090:8090"
