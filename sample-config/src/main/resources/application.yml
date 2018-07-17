@@ -1,17 +1,6 @@
 server:
   port: 8090
 
-#encrypt:
-  #key: wangzj
-
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone:  'http://localhost:8070/eureka'
-
 spring:
   application:
     name: sample-config
@@ -19,8 +8,10 @@ spring:
     config:
       server:
         git:
-          uri:  'https://gitee.com/wangzj91/config.git'
-          clone-on-start: true
-      encrypt:
-          enabled: false
+          uri:  'https://github.com/happilysheep/cloud-sample.git'
+          searchPaths: 'config-repo'
+          username: 'happilysheep'
+          password: 'Wangzj@926495'
+        encrypt:
+                    enabled: false
 
