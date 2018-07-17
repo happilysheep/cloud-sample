@@ -22,3 +22,11 @@ services :
           - "8090:8090"
       depends_on:
                 - "jce_java"
+
+    zuul:
+      build:    ./sample-zuul
+      image:    sample/zuul
+      ports:
+          -  "8091:8091"
+      depends_on:
+                - "jce_java"

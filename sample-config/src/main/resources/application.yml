@@ -9,9 +9,15 @@ spring:
       server:
         git:
           uri:  'https://github.com/happilysheep/cloud-sample.git'
-          searchPaths: 'config-repo'
+          searchPaths: 'repo-config'
           username: 'happilysheep'
           password: 'Wangzj@926495'
-        encrypt:
-                    enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone:  'http://localhost:8070/eureka'
+
+encrypt:
+  key: '*&3loa#@9no_0*(!'
+
 
