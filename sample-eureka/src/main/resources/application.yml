@@ -9,4 +9,4 @@ eureka:
 
 spring:
   application:
-    name: sample-eureka1
+    name: cloud-eureka1

@@ -3,29 +3,29 @@ version :  '3'
 services :
     jce_java:
       build:  ./docker-jce-jre
-      image:  sample/jce_java
+      image:  cloud/jce_java
       read_only:  true
       command:  echo  "jce java"
 
     eureka:
-      build:  ./sample-eureka
-      image:  sample/eureka
+      build:  ./cloud-eureka
+      image:  cloud/eureka
       ports:
           - "8070:8070"
       depends_on:
           - "jce_java"
 
     config:
-      build:  ./sample-config
-      image:  sample/config
+      build:  ./cloud-config
+      image:  cloud/config
       ports:
           - "8090:8090"
       depends_on:
                 - "jce_java"
 
     zuul:
-      build:    ./sample-zuul
-      image:    sample/zuul
+      build:    ./cloud-zuul
+      image:    cloud/zuul
       ports:
           -  "8091:8091"
       depends_on:

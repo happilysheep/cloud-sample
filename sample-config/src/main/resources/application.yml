@@ -3,12 +3,12 @@ server:
 
 spring:
   application:
-    name: sample-config
+    name: cloud-config
   cloud:
     config:
       server:
         git:
-          uri:  'https://github.com/happilysheep/cloud-sample.git'
+          uri:  'https://github.com/happilysheep/cloud-cloud.git'
           searchPaths: 'repo-config'
           username: 'happilysheep'
           password: 'Wangzj@926495'

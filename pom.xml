@@ -14,6 +14,7 @@
         <module>sample-config</module>
         <module>sample-common</module>
         <module>sample-zuul</module>
+        <module>sample-shiro</module>
     </modules>
 
     <parent>
