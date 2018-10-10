@@ -6,9 +6,16 @@ import com.cloud.shiro.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.IncorrectCredentialsException;
+import org.apache.shiro.authc.LockedAccountException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +47,7 @@ public class LoginController {
         Map map=new HashMap();
         map.put("aaa","111");
         map.put("aab","2");
-        /*Subject subject = SecurityUtils.getSubject();
+        Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPass());
         token.setRememberMe(true);
         try {
@@ -56,12 +63,13 @@ public class LoginController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // 此方法不处理登录成功,由shiro进行处理.*/
-        return JSONObject.toJSONString(map);
-        //return "www.baidu.com";
+        // 此方法不处理登录成功,由shiro进行处理.
+        //return JSONObject.toJSONString(map);
+        return "www.baidu.com";
     }
 
     @RequestMapping(value="/tologin",method = RequestMethod.GET)
+    @ResponseBody
     public String tologin(){
         return "index";
     }

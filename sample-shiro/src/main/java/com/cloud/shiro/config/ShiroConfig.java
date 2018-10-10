@@ -4,6 +4,7 @@ import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.apache.shiro.mgt.SecurityManager;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,7 +16,7 @@ import java.util.Map;
  */
 /*Apache Shiro 核心通过 Filter 来实现，就好像SpringMvc 通过DispachServlet 来主控制一样。
   既然是使用 Filter 一般也就能猜到，是通过URL规则来进行过滤和权限校验，所以我们需要定义一系列关于URL的规则和访问权限。*/
-//@Configuration
+@Configuration
 public class ShiroConfig {
     /**
      * 身份认证realm; (这个需要自己写，账号密码校验；权限等)

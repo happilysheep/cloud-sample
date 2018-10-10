@@ -24,7 +24,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(createApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.cloud.shiro.controller"))
                 .paths(PathSelectors.any())
                 .build();
 
@@ -33,9 +33,7 @@ public class SwaggerConfig {
     private ApiInfo createApiInfo() {
         return new ApiInfoBuilder()
                 .title("Spring Boot中使用Swagger2构建RESTful APIs")
-                .description("更多Spring Boot相关文章请关注：http://blog.didispace.com/")
-                .termsOfServiceUrl("http://blog.didispace.com/")
-                .contact("程序猿DD")
+                .contact("happilysheep")
                 .version("1.0")
                 .build();
     }
