@@ -1,6 +1,5 @@
 package com.cloud.shiro.controller;
 
-import com.alibaba.fastjson.JSONObject;
 import com.cloud.shiro.domain.User;
 import com.cloud.shiro.service.UserService;
 import io.swagger.annotations.Api;
@@ -15,7 +14,6 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -45,8 +43,6 @@ public class LoginController {
     @ApiOperation("登陆")
     public String login(@RequestBody @ApiParam("用户") User user){
         Map map=new HashMap();
-        map.put("aaa","111");
-        map.put("aab","2");
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getName(), user.getPass());
         token.setRememberMe(true);
@@ -64,12 +60,10 @@ public class LoginController {
             e.printStackTrace();
         }
         // 此方法不处理登录成功,由shiro进行处理.
-        //return JSONObject.toJSONString(map);
         return "www.baidu.com";
     }
 
     @RequestMapping(value="/tologin",method = RequestMethod.GET)
-    @ResponseBody
     public String tologin(){
         return "index";
     }
